@@ -582,7 +582,7 @@
               "type": "product-card",
               "name": "t:names.product_card",
               "settings": {
-                "product": "animals-and-pet-supplies-example-product-4",
+                "product": "dog-travel-water-bottle",
                 "product_card_gap": 16,
                 "inherit_color_scheme": true,
                 "color_scheme": "",
