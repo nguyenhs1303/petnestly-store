@@ -39,13 +39,13 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h1><strong>Cherished Connections</strong></h1>",
+                "text": "<h1><strong>Elevated Living for Pets</strong></h1>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "custom",
                 "font": "var(--font-heading--family)",
-                "font_size": "5.5rem",
+                "font_size": "4.5rem",
                 "line_height": "tight",
                 "letter_spacing": "tight",
                 "case": "none",
@@ -77,6 +77,113 @@
         "color_scheme": "scheme-1",
         "padding-block-start": 0,
         "padding-block-end": 48
+      }
+    },
+    "hero_E3yqDE": {
+      "type": "hero",
+      "blocks": {
+        "text_Lm3PcP": {
+          "type": "text",
+          "settings": {
+            "text": "<h1><strong>Elevated Living for Pets</strong></h1>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "3.5rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_HMPPXg": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Thoughtfully designed essentials for your beloved companions</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "button_GjYQgM": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "Shop now",
+            "link": "shopify://collections/all",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_Lm3PcP",
+        "text_HMPPXg",
+        "button_GjYQgM"
+      ],
+      "name": "t:names.hero",
+      "settings": {
+        "media_type_1": "image",
+        "image_1": "shopify://shop_images/animals-pet-supplies-minimal-2-middle_6b074353-0a44-4d9b-8c54-18c9aaca3772.jpg",
+        "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "flex-end",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "flex-end",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "large",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-5",
+        "toggle_overlay": true,
+        "overlay_color": "#00000026",
+        "overlay_style": "gradient",
+        "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 40,
+        "padding-block-end": 40
       }
     },
     "product_list_themegen": {
@@ -872,6 +979,7 @@
   },
   "order": [
     "media_with_content_RVymQU",
+    "hero_E3yqDE",
     "product_list_themegen",
     "section_UpjyCL",
     "individual_product_card_theme_install",
