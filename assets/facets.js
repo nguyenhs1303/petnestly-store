@@ -29,8 +29,27 @@ class FacetsFormComponent extends Component {
   createURLParameters(formData = new FormData(this.refs.facetsForm)) {
     let newParameters = new URLSearchParams(/** @type any */ (formData));
 
-    if (newParameters.get('filter.v.price.gte') === '') newParameters.delete('filter.v.price.gte');
-    if (newParameters.get('filter.v.price.lte') === '') newParameters.delete('filter.v.price.lte');
+    const priceFacet = this.refs.facetsForm.querySelector('price-facet-component');
+    const currency = priceFacet ? (priceFacet.dataset.currency || 'USD') : 'USD';
+    
+    ['gte', 'lte'].forEach(suffix => {
+      const param = `filter.v.price.${suffix}`;
+      const val = newParameters.get(param);
+      if (val === '') {
+        newParameters.delete(param);
+      } else if (val) {
+        const minorUnits = convertMoneyToMinorUnits(val, currency);
+        if (minorUnits !== null) {
+          const isZeroDecimal = ['BIF','BYR','CLP','DJF','GNF','ISK','JPY','KMF','KRW','PYG','RWF','UGX','UYI','VND','VUV','XAF','XAG','XAU','XBA','XBB','XBC','XBD','XDR','XOF','XPD','XPF','XPT','XSU','XTS','XUA'].includes(currency.toUpperCase());
+          const isThreeDecimal = ['BHD','IQD','JOD','KWD','LYD','OMR','TND'].includes(currency.toUpperCase());
+          const isFourDecimal = ['CLF','UYW'].includes(currency.toUpperCase());
+          const isFiveDecimal = ['MRO'].includes(currency.toUpperCase());
+          const precision = isZeroDecimal ? 0 : isThreeDecimal ? 3 : isFourDecimal ? 4 : isFiveDecimal ? 5 : 2;
+          const majorUnits = (minorUnits / Math.pow(10, precision)).toFixed(precision);
+          newParameters.set(param, majorUnits);
+        }
+      }
+    });
 
     newParameters.delete('page');
 

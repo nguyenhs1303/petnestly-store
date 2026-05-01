@@ -4213,3 +4213,47 @@ product-recommendations:has([data-has-recommendations='false']) {
     translate: 0px var(--atc-destination, 0px);
   }
 }
+
+/* Fix product list layout for varying title lengths */
+.product-card__content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  padding-bottom: 16px !important;
+}
+
+.product-card__content > :not(.card-gallery) {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.product-card__content .user-select-text,
+.product-card__content :is(h1, h2, h3, h4, h5, h6, p[role="heading"]) {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+/* Bold product title only and set color to black */
+.product-card__content .user-select-text,
+.product-card__content .user-select-text :is(h1, h2, h3, h4, h5, h6, p[role="heading"]) {
+  font-weight: bold !important;
+  color: #000000 !important;
+}
+
+/* Box shadow hover effect for the entire product card */
+.product-card:hover .product-card__content {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* Box shadow for header when scrolling */
+#header-component[data-sticky-state='active'] {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease;
+}
